@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.edge.service import Service
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from dotenv import load_dotenv
 import os
 import time
@@ -17,7 +17,7 @@ password_value = os.getenv("PASSWORD")
 url = "https://ums.lpu.in/lpuums/LoginNew.aspx"  # Replace with actual URL
 # ----------------------------------------
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
 driver.get(url)
 driver.maximize_window()
 
